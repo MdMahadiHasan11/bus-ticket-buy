@@ -4,15 +4,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bus Ticket Buy</title>
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <header>
+        <!-- section navbar   #1DD100. -->
+        <div class="my-6">
+            <div class="flex justify-between items-center">
+                <div class="flex">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-11 w-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-lg">
+                            <li><a class="text-btn-color font-bold">Home</a></li>
+                            <li class=""><a class="text-text-gray">About</a></li>
+                            <li><a class="text-text-gray">Destination</a></li>
+                            <li class=""><a class="text-text-gray">Search</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="text-4xl font-extrabold">MH-Ticket</h2>
+                    </div>
+                </div>
+                <div class=" hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 text-lg">
+                        <li><a class="text-btn-color font-bold ">Home</a></li>
+                        <li class="mx-8"><a class="text-text-gray">About</a></li>
+                        <li><a class="text-text-gray">Destination</a></li>
+                        <li class="mx-8"><a class="text-text-gray">Search</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-row">
+                    <button
+                        class="px-7 py-5 mx-auto border-[#1DD10066] border-solid border-2 bg-[#1DD10019] rounded-2xl text-xl font-bold flex items-center text-[#1DD100]"><span
+                            class="pr-3">Bus</span><img src="images/bus-icon.png" alt=""></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner section here -->
+        <div class="relative">
+            <div class="hero min-h-screen" style="background-image: url(images/banner.png);">
+                <div class="hero-overlay bg-opacity-60"></div>
+                <div class="hero-content text-center text-neutral-content">
+                    <div class="max-w-screen-lg">
+                        <h1 class="mb-5 text-7xl font-extrabold">End-to-End Travel with <br> <span
+                                class="text-[#1DD100]">MH
+                                Paribahan</span></h1>
+                        <p class="mb-5">Yes, you can run unit tests and view the results directly within the app. The
+                            integrated testing features allow for a streamlined .</p>
+                        <button class="btn btn-primary bg-[#1DD100] text-black">Buy Ticket</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- badge -->
+            <div
+                class="z-10 lg:w-3/4 w-full lg:absolute justify-between flex lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2">
+                <!-- text container lg:w-2/4 w-full lg:absolute-->
+
+                <!-- badge 1 -->
+                <div class="border-2 border-solid border-b-[#1DD100] rounded-3xl p-6 flex gap-4 bg-white">
+                    <img src="images/people.png" alt="">
+                    <div>
+                        <h3 class="lg:text-2xl md:text-2xl text-xl font-extrabold">500K+</h3>
+                        <p class="font-medium text-gray-700 mt-2 mx-auto lg:text-base md:text text-sm">Registered users
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- badge 2 -->
+                <div class="border-2 border-solid bg-white border-b-[#1DD100] rounded-3xl p-6 flex gap-4">
+                    <img src="images/ticket-cupon.png" alt="">
+                    <div>
+                        <h3 class="lg:text-2xl md:text-2xl text-xl font-extrabold">1.7 lacks</h3>
+                        <p class="font-medium text-gray-700 mt-2 mx-auto lg:text-base md:text text-sm">Tickets sold</p>
+                    </div>
+
+                </div>
+
+                <!-- badge 3 -->
+                <div class="border-2 border-solid bg-white border-b-[#1DD100] rounded-3xl p-6 flex gap-4">
+                    <img src="images/stoppage.png" alt="">
+                    <div>
+                        <h3 class="lg:text-2xl md:text-2xl text-xl font-extrabold">80K+</h3>
+                        <p class="font-medium text-gray-700 mt-2 mx-auto lg:text-base md:text text-sm">Rental partners
+                        </p>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- badge end -->
+
+
+            <!-- banner end -->
+        </div>
+        <!-- banner end -->
+
+        <!-- Coupon section start -->
+        <section class="mt-48">
+            <div>
+                <h2 class="text-4xl font-extrabold text-center">Best offers for you</h2>
+            </div>
+            <div>
+                <!-- coupon -->
+                <div class="border-2 border-solid border-b-[#1DD100] rounded-3xl p-6 flex gap-4 bg-white">
+                    <img src="images/people.png" alt="">
+                    <div>
+                        <h3 class="lg:text-2xl md:text-2xl text-xl font-extrabold">500K+</h3>
+                        <p class="font-medium text-gray-700 mt-2 mx-auto lg:text-base md:text text-sm">Registered users
+                        </p>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div>
+                <button
+                    class="mt-10 px-7 py-5 mx-auto border-[#1DD10066] border-solid border-2 bg-[#1DD10019] rounded-2xl text-xl font-bold flex items-center text-[#1DD100]">See All Offers</button>
+            </div>
+        </section>
+
+        <!-- coupon section end -->
+    </header>
+    <main></main>
+    <footer></footer>
+
 
     <script src="script/index.js"></script>
 </body>

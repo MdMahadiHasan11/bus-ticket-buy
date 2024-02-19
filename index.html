@@ -411,33 +411,76 @@
                     </div>
 
                     <!-- 2 Every seat -->
-                    <div class="flex justify-between mx-8 py-6">
-                        <div>
-                            <p class="pl-5">C2</p>
+                    <div id="seatInfoContainer" class="pl-20">
+                        <!-- <div>
+                            <p class=""><span class="ml-12 mr-24 my-6">C2</span><span class="ml-28 my-6">Economy <span class="ml-44">550</span></span>
+                            </p>
+                        </div> -->
+
+                        <!-- <table>
+                            <tr>
+                                <td>A1</td>
+                                <td>Economy</td>
+                                <td>550</td>
+                            </tr>
+                            <tr>
+                                <td>A2</td>
+                                <td>Economy</td>
+                                <td>550</td>
+                            </tr>
+                            <tr>
+                        </table> -->
+
+
+                        <div class="overflow-x-auto">
+                            <table class="table">
+                                <tbody id="tcontainer" class="">
+                                    <!-- row 1 -->
+                                    <!-- <tr id="trow" class="">
+                                        <td>A1</td>
+                                        <td>Economy</td>
+                                        <td>550</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td>A1</td>
+                                        <td>Economy</td>
+                                        <td>550</td>
+                                    </tr> -->
+
+                                </tbody>
+                            </table>
                         </div>
-                        <p>Economy</p>
-                        <p>550</p>
+
                     </div>
+
+
+
+
 
                     <!-- 3 total price -->
                     <div class="flex justify-between mx-8 py-6 font-semibold border-t-2 border-solid border-gray-400">
                         <p>Total Price</p>
-                        <p>BDT <span>550</span></p>
+                        <p>BDT <span id="totalPrice" class="">0</span></p>
                     </div>
 
 
                     <!-- apply coupon -->
-                    <div class="flex justify-between bg-white mx-8">
-                        <input class="pl-5 rounded-xl border-none w-full" placeholder="Have any copupon?" type="text">
-                        <button
-                            class="border-none bg-[#1DD100] rounded-2xl px-5 py-3 text-xl font-bold flex items-center text-white">Apply</button>
+
+                    <div id="discount">
+                        <div id="couponContainer" class="flex justify-between bg-white mx-8 hidden ">
+                            <input id="couponInput" class="pl-5 rounded-xl border-none w-full"
+                                placeholder="Have any copupon?" type="text">
+                            <button id="applyCoupon" onclick="couponCall()"
+                                class="border-none bg-[#1DD100] rounded-2xl px-5 py-3 text-xl font-bold flex items-center text-white">Apply</button>
+                        </div>
                     </div>
+
 
 
                     <!-- Grand total -->
                     <div class="flex justify-between mx-8 py-6 font-semibold">
                         <p>Grand Total</p>
-                        <p>BDT <span>550</span></p>
+                        <p>BDT <span id="grandTotal">0</span></p>
                     </div>
 
                 </div>
@@ -471,8 +514,8 @@
 
                     <!-- button -->
                     <div class="mt-12">
-                        <button
-                            class="border-none bg-[#1DD100] rounded-2xl px-5 py-3 text-xl font-bold flex items-center justify-center text-white w-full">Next</button>
+                        <button id="nextButton"
+                            class=" border-none bg-[#1DD100] rounded-2xl px-5 py-3 text-xl font-bold flex items-center justify-center text-white w-full">Next</button>
                     </div>
 
                     <!-- term and condition -->

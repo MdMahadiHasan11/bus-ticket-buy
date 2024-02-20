@@ -177,7 +177,7 @@ function couponCalculation(seat) {
 
 
         // discount display
-        newText.innerText = 'Discount Price' + dcost;
+        newText.innerText = 'Discount Price';
         newText.classList.add('px-8','font-semibold');
         dis.appendChild(newText);  
 

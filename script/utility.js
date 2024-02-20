@@ -1,4 +1,4 @@
-// Selected seat in array
+// Selected seat in array function
 function setOfArray(id) {
 
     const num = array.length;
@@ -6,17 +6,11 @@ function setOfArray(id) {
         return array;
     }
 
-    if (array.length === 0) {
-        array.push(id);
-        return array;
-    }
-
     let flag = 0;
 
-    for (let i = 0; i < num; i++) {
+    for (let i = 0; i <= num; i++) {
 
         if (array[i] == id) {
-            // array.push(id);
             flag = 1;
 
         }
@@ -25,14 +19,46 @@ function setOfArray(id) {
     if (flag === 0) {
         array.push(id);
 
+        // set ticket information
+        seatInformation(id);
+
+
+        // set background
+        setBackground(id);
+
+
+        // call the coupon function
+        if (array.length == 4) {
+            const cuponId = document.getElementById('couponContainer');
+            cuponId.classList.remove('hidden');
+        }
+
+
+
+        // total cost buying by ticket and Display Total Price
+        const cost1 = calculatePrice(array.length);
+        const costShow = document.getElementById('totalPrice');
+        costShow.innerText = cost1;
+
+
+        // set grand total cost without discount
+        const costGrand = document.getElementById('grandTotal');
+        costGrand.innerText = cost1;
+
+
+
     }
 
     return array;
 }
+// Selected seat in array function end
 
 
 
-// bg
+
+
+
+// BackgroundColor function
 function setBackground(id) {
     const seat = document.getElementById(id);
     seat.classList.remove('bg-gray-200');
@@ -40,7 +66,8 @@ function setBackground(id) {
 }
 
 
-// seat update
+
+// seat update function
 function seatCount(num) {
     let selectSeatText = document.getElementById('countSeat');
     let availableSeatText = document.getElementById('availableSeat');
@@ -52,7 +79,7 @@ function seatCount(num) {
     selectSeatText.innerHTML = totalSelectSeatNo;
 
 
-    //    available seat update
+    //available seat update
     let availableSelectSeat = availableSeatText.innerHTML;
     let totalAvailableSeatNo = parseInt(availableSelectSeat);
     totalAvailableSeatNo = 40 - totalSelectSeatNo;
@@ -60,7 +87,9 @@ function seatCount(num) {
 }
 
 
-// seat info
+
+
+// seat info set function
 function seatInformation(id) {
 
     const trows = document.createElement('tr');
@@ -68,48 +97,27 @@ function seatInformation(id) {
     const tCol2 = document.createElement('td');
     const tCol3 = document.createElement('td');
 
-    // const seatNo = document.getElementById('id');
-    // const seatName = seatNo.innerText;
+    const seatNo = document.getElementById('id');
 
-    tCol1.innerText=id.innerHTML;
-    tCol2.innerText='Economy';
-    tCol3.innerText=550;
+
+    tCol1.innerText = id;
+    tCol2.innerText = 'Economy';
+    tCol3.innerText = 550;
 
     trows.appendChild(tCol1);
     trows.appendChild(tCol2);
     trows.appendChild(tCol3);
 
 
-    const t_Container =document.getElementById('tcontainer');
+    const t_Container = document.getElementById('tcontainer');
 
     t_Container.appendChild(trows);
-    // console.log(trows);
-    
-
-    // seatInfoTexts.innerHTML = `
-    //       <div class="flex justify-between mx-8 py-6">
-    //       <div>
-    //       <p id="seatChange" class="pl-5">C2</p>
-    //       </div>
-    //       <p>Economy</p>
-    //       <p>550</p>
-    //       </div>`;
-
-        //   const seatChanges = document.getElementById('seatChange');
-        //   seatChanges.innerText=id;
-
-
-    // console.log(seatInfoText);
-
-
-    // const seatInfoText = document.getElementById('seatInfoContainer');
-    // seatInfoText.appendChild(seatInfoTexts);
-
 }
 
 
-// calculation
-function calculatePrice (totalSeat){
+
+// calculation Seat price function
+function calculatePrice(totalSeat) {
     const cost = 550 * totalSeat
     return cost;
 }
@@ -117,49 +125,53 @@ function calculatePrice (totalSeat){
 
 // coupon calculation
 function couponCalculation(seat) {
-    let textCoupons=document.getElementById('couponInput');
-    const textCoupon= textCoupons.value;
-    if(textCoupon === 'NEW15' )
-    {
-       
-       const cuponId = document.getElementById('couponContainer');
+    let textCoupons = document.getElementById('couponInput');
+    const textCoupon = textCoupons.value;
+    if (textCoupon === 'NEW15') {
 
-       const dis1 = document.getElementById('discount');
+        const cuponId = document.getElementById('couponContainer');
+        const dis1 = document.getElementById('discount');
+
         const newText1 = document.createElement('h1');
 
-        const dcost1=0.15*4*550 ;
-        newText1.innerText='Discount     -' + dcost1;
-        newText1.classList.add('ml-[250px]');
-        // newText.innerText=;
+        // discount calculate
+        const dcost1 = 0.15 * seat * 550;
+        const totalCost = seat * 550 - dcost1;
 
+        // discount display
+        newText1.innerText = 'Discount     -' + dcost1;
+        newText1.classList.add('ml-[350px]');
         dis1.appendChild(newText1);
 
-        
+
         cuponId.classList.add('hidden');
-        return 4*550 - 0.15*4*550 ;
+
+        return totalCost;
 
     }
-    else if(textCoupon === 'Couple 20'){
-        
+    else if (textCoupon === 'Couple 20') {
+
         const cuponId = document.getElementById('couponContainer');
-        
+
         const dis = document.getElementById('discount');
         const newText = document.createElement('h1');
 
-        const dcost=0.20*4*550 ;
-        newText.innerText='Discount     -' + dcost;
-        newText.classList.add('ml-[250px]');
-        // newText.innerText=;
 
+        // Calculation discount
+        const dcost = 0.20 * 4 * 550;
+        const totalCostAfterDiscount = seat * 550 - dcost;
+
+
+        // discount display
+        newText.innerText = 'Discount     - ' + dcost;
+        newText.classList.add('ml-[350px]');
         dis.appendChild(newText);
 
-
-        
         cuponId.classList.add('hidden');
-        return 4*550 - 0.20*4*550 ;
+        return totalCostAfterDiscount;
     }
-    else{
+    else {
         alert("Invalid Coupon!");
-        return 4*550;
+        return seat * 550;
     }
 }

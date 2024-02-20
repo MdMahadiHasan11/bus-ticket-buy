@@ -29,8 +29,11 @@ function setOfArray(id) {
 
         // call the coupon function
         if (array.length == 4) {
-            const cuponId = document.getElementById('couponContainer');
-            cuponId.classList.remove('hidden');
+            // const cuponId = document.getElementById('couponContainer');
+            // cuponId.classList.remove('hidden');
+
+
+            document.getElementById("applyCoupon").disabled = false;
         }
 
 
@@ -92,17 +95,22 @@ function seatCount(num) {
 // seat info set function
 function seatInformation(id) {
 
-    const trows = document.createElement('tr');
-    const tCol1 = document.createElement('td');
-    const tCol2 = document.createElement('td');
-    const tCol3 = document.createElement('td');
+    const trows = document.createElement('div');
+    const tCol1 = document.createElement('p');
+    const tCol2 = document.createElement('p');
+    const tCol3 = document.createElement('p');
 
     const seatNo = document.getElementById('id');
 
+    trows.classList.add('flex');
+    trows.classList.add('justify-between','py-4','font-semibold');
 
     tCol1.innerText = id;
     tCol2.innerText = 'Economy';
     tCol3.innerText = 550;
+
+
+
 
     trows.appendChild(tCol1);
     trows.appendChild(tCol2);
@@ -133,15 +141,20 @@ function couponCalculation(seat) {
         const dis1 = document.getElementById('discount');
 
         const newText1 = document.createElement('h1');
+        const newText2 = document.createElement('h1');
 
         // discount calculate
         const dcost1 = 0.15 * seat * 550;
         const totalCost = seat * 550 - dcost1;
 
         // discount display
-        newText1.innerText = 'Discount     -' + dcost1;
-        newText1.classList.add('ml-[350px]');
+        newText1.innerText = 'Discount Price ';
+        newText1.classList.add('px-8','font-semibold');
         dis1.appendChild(newText1);
+
+        newText2.innerText ='-'+dcost1;
+        newText2.classList.add('px-8','font-semibold');
+        dis1.appendChild(newText2);
 
 
         cuponId.classList.add('hidden');
@@ -155,6 +168,7 @@ function couponCalculation(seat) {
 
         const dis = document.getElementById('discount');
         const newText = document.createElement('h1');
+        const newText3 = document.createElement('h1');
 
 
         // Calculation discount
@@ -164,8 +178,12 @@ function couponCalculation(seat) {
 
         // discount display
         newText.innerText = 'Discount     - ' + dcost;
-        newText.classList.add('ml-[350px]');
-        dis.appendChild(newText);
+        newText.classList.add('px-8','font-semibold');
+        dis.appendChild(newText);  
+
+        newText3.innerText ='-'+dcost;
+        newText3.classList.add('px-8','font-semibold');
+        dis.appendChild(newText3);
 
         cuponId.classList.add('hidden');
         return totalCostAfterDiscount;

@@ -1,5 +1,6 @@
 let array = [];
 document.getElementById("nextButton").disabled = true;
+document.getElementById("applyCoupon").disabled = true;
 
 
 

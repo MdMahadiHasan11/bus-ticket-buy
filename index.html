@@ -184,7 +184,7 @@
     <main id="main" class="bg-[#F7F8F8] pb-32 px-16 border-t-2 border-solid  border-[#1DD100] rounded-t-[88px]">
 
         <!-- Route address section start  -->
-        <section class="mt-14">
+        <section class="mt-2">
 
             <!-- Header Text start -->
             <div class="py-8">
@@ -486,7 +486,7 @@
 
 
                 <!-- right seat plane start -->
-                <div class=" lg:flex-1">
+                <div class=" lg:flex-1 pr-5">
                     <!-- row-1 -->
                     <div class="py-5 pr-8 border-b-2 border-dashed border-gray-400">
                         <p class="text-2xl font-bold">Select Your Seat</p>
@@ -497,7 +497,7 @@
 
                         <!-- 1 Name -->
                         <div
-                            class="flex justify-between mx-8 py-4 border-b-2 border-solid border-gray-400 font-semibold">
+                            class="flex justify-between border-b border-solid border-gray-400 font-bold mx-8 py-5">
                             <div>
                                 <p>Seat <span id="countSeat" class="bg-[#1DD100] rounded-xl px-3">0</span></p>
                             </div>
@@ -507,7 +507,7 @@
                         </div>
 
                         <!-- 2 Every seat -->
-                        <div id="seatInfoContainer" class="pl-20">
+                        <div id="seatInfoContainer" class="px-8">
                             <!-- <div>
                                 <p class=""><span class="ml-12 mr-24 my-6">C2</span><span class="ml-28 my-6">Economy <span class="ml-44">550</span></span>
                                 </p>
@@ -528,23 +528,23 @@
                             </table> -->
 
 
-                            <div class="overflow-x-auto">
-                                <table class="table">
-                                    <tbody id="tcontainer" class="">
-                                        <!-- row 1  -->
-                                        <!--  <tr id="trow" class="">
-                                            <td>A1</td>
-                                            <td>Economy</td>
-                                            <td>550</td>
-                                        </tr>
-                                        <tr class="">
+                            <div class="">
+                                <div>
+                                    <div id="tcontainer" class="">
+                                        <!-- row 1 overflow-x-auto class="table" -->
+                                         <!-- <div id="trow" class=" flex justify-between">
+                                            <p>A1</p>
+                                            <p>Economy</p>
+                                            <p>550</p>
+                                        </div> -->
+                                       <!--  <tr class="">
                                             <td>A1</td>
                                             <td>Economy</td>
                                             <td>550</td>
                                         </tr> -->
 
-                                    </tbody>
-                                </table>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
@@ -555,7 +555,7 @@
 
                         <!-- 3 total price -->
                         <div
-                            class="flex justify-between mx-8 py-6 font-semibold border-t-2 border-solid border-gray-400">
+                            class="flex justify-between mx-8 py-6 font-semibold border-t border-solid border-gray-400">
                             <p>Total Price</p>
                             <p>BDT <span id="totalPrice" class="">0</span></p>
                         </div>
@@ -563,9 +563,9 @@
 
                         <!-- apply coupon -->
 
-                        <div id="discount">
-                            <div id="couponContainer" class="flex justify-between bg-white mx-8 hidden ">
-                                <input id="couponInput" class="pl-5 rounded-xl border-none w-full"
+                        <div id="discount" class="flex justify-between ">
+                            <div id="couponContainer" class="flex  bg-white mx-8 w-full rounded-2xl ">
+                                <input id="couponInput" class="pl-5 border-none w-full"
                                     placeholder="Have any copupon?" type="text">
                                 <button id="applyCoupon" onclick="couponCall()"
                                     class="border-none bg-[#1DD100] rounded-2xl px-5 py-3 text-xl font-bold flex items-center text-white">Apply</button>
